@@ -8,7 +8,7 @@ Flags:\
 `-c` clear content of default list\
 `-t` add new tasks\
 `-e` add new event\
-`-i` add new important task\
+`-i` add new important task
 
 ## hello
 Just Hello World...
