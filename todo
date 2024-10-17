@@ -24,7 +24,7 @@ while getopts 'pct:e:i:' flag; do
         t)  t_flag='true'
             text="> ${OPTARG}";;
         e)  e_flag='true'
-            text="- ${OPTARG}";;
+            text="* ${OPTARG}";;
         i)  i_flag='true'
             text="! ${OPTARG}";;
         p)  p_flag='true'
