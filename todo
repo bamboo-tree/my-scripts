@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# flags
+# n_flag='false'      # new todo list
+t_flag='false'      # add new task
+e_flag='false'      # add new event
+i_flag='false'      # flag important
+c_flag='false'      # clear todo list
+# r_flag='false'      # remove todo list
+p_flag='false'      # print todo list content
+
+file='default'
+text='my task'
+
+
+if !([ -d ~/ToDo ]); then
+    mkdir ~/ToDo
+    touch ~/ToDo/$file
+    printf "To Do List : $file\n\n" >> ~/ToDo/$file
+fi;
+
+while getopts 'pct:e:i:' flag; do
+    case "${flag}" in
+        t)  t_flag='true'
+            text="> ${OPTARG}";;
+        e)  e_flag='true'
+            text="- ${OPTARG}";;
+        i)  i_flag='true'
+            text="! ${OPTARG}";;
+        p)  p_flag='true'
+            printf "\n"
+            cat ~/ToDo/$file
+            printf "\n";;
+        c)  rm ~/ToDo/$file
+            touch ~/ToDo/$file
+            printf "To Do List : $file\n\n" >> ~/ToDo/$file;;       
+    esac
+done
+
+
+if $t_flag -eq 'true' || $e_flag -eq 'true' || $i_flag -eq 'true'; then
+    printf "$text\n" >> ~/ToDo/$file
+fi;
