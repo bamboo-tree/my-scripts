@@ -1,0 +1,15 @@
+#!/bin/bash
+
+all_data=$(eval "ls");
+dest_path=$1;
+
+# add / if wasn't added
+if [[ "$dest_path" != */ ]]; then
+	dest_path="${dest_path}/";    
+fi
+
+for elem in $all_data; do
+	command="ln -s $(pwd)/${elem} ${dest_path}${elem}";
+	echo $command;
+	$(eval "$command");
+done
