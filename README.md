@@ -15,3 +15,6 @@ Just Hello World...
 
 ## auto-link
 This script automates the process of creating symbolic links on linux. It's very useful if you have your config files in other directory than `.config` (as I do). Just go to the source directory and run this script with destination directory. It also should prevent the `Too many levels of symbolic links` error.
+
+## update
+Just `sudo pacman -Syu` with some silly output.
