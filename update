@@ -1,7 +1,11 @@
 #!/bin/bash
 
-command="sudo pacman -Syu";
-$command;
+output=$(sudo pacman -Syu --noconfirm 2>&1)
 
-# random cowsay output
-echo "System update finished" | cowsay -r; 
+if echo "$output" | grep -q "there is nothing to do"; then
+    cowsay "System is already up to date"
+elif echo "$output" | grep -q "Packages"; then
+    cowsay "System update finished successfully!"
+else
+    cowsay "Update completed with messages:"$'\n'"$output"
+fi

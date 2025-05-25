@@ -1,0 +1,8 @@
+Cheat-Sheet for commands that I might need in future.
+(I have memory of a gold fish)
+
+xprop | grep WM_CLASS
+Returns class name of opened window. Very useful to set some properties for specific apps (i.e. i3 configuration and float mode)
+
+xev
+Returns name of pressed keys. Very useful to make custom keyboard shortcuts.
