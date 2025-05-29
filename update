@@ -1,11 +1,12 @@
 #!/bin/bash
 
+echo "Updating system..."
 output=$(sudo pacman -Syu --noconfirm 2>&1)
 
 if echo "$output" | grep -q "there is nothing to do"; then
-    cowsay "System is already up to date"
+    cowsay -r "System is already up to date"
 elif echo "$output" | grep -q "Packages"; then
-    cowsay "System update finished successfully!"
+    cowsay -r "System update finished successfully!"
 else
-    cowsay "Update completed with messages:"$'\n'"$output"
+    cowsay -r "Update completed with messages:"$'\n'"$output"
 fi
