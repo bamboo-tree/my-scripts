@@ -18,3 +18,6 @@ This script automates the process of creating symbolic links on linux. It's very
 
 ## update
 Just `sudo pacman -Syu` with some silly output.
+
+## time/*
+I was bored and had some free time from studying for my finals, so I made the decision to become a computer nomad, and to do that I started delving into the beauty and simplicity of plain C. Here is the fruit of my fun and fatigue, a few binary files to display the current date and time. This is part of another project, but it was so cute I had to add it here.
